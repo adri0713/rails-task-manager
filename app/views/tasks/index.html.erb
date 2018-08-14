@@ -1,0 +1,8 @@
+
+<% @tasks.each do |task| %>
+  <h2><%= link_to "#{task.title}", task_path(task.id) %></h2>
+  <p><%= task.details %></p>
+  <%= task.completed ? "✅" : "🗹" %>
+  <%= link_to "Edit", edit_task_path(task.id)  %>
+<% end %>
+<%= link_to "add a new task", new_task_path, class: 'btn btn-success' %>
